@@ -1,0 +1,351 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+%\title{Limite}
+%\author{ju }
+%\date{September 2016}
+
+%\begin{document}
+
+%\maketitle
+
+%\section{Introduction}
+
+%\end{document}
+\setlength{\oddsidemargin}{0.5 cm} \setlength{\evensidemargin}{0.5
+cm} \setlength{\topmargin}{-1 cm} \setlength{\parindent}{1.0cm}
+\setlength{\textwidth}{16 cm} \setlength{\textheight}{22 cm}
+%\usepackage{fancyheadings}
+\usepackage{color}
+%\usepackage[latin1]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{amstext}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{theorem}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{here}
+\usepackage[mathscr]{eucal}
+\usepackage[all]{xy}
+\usepackage[hypertex]{hyperref}% para flutuar o texto
+% para desenhar quadro
+\usepackage{float}
+\floatstyle{plain}
+\newfloat{quadro}{H}{loq}[chapter]
+\floatname{quadro}{Quadro}
+
+%\theoremstyle{plain}
+\newtheorem{teorema}{Teorema}
+\newtheorem{lema}{Lema}[chapter]
+\newtheorem{exercicios}{Exercicios}[chapter]
+\newtheorem{proposicao}{Proposi\c{c}\~{a}o}
+\newtheorem{Def}{Definição}[chapter]
+\newtheorem{exemplo}{Exemplo}[chapter]
+\newtheorem{solucao}{Solução}[chapter]
+\newtheorem{exemplos}{Exemplos}[chapter]
+\newtheorem{Observ}{Observação}[chapter]
+\newtheorem{corolario}{Corolário}
+\hyphenation{des-cre-ver}
+%\theoremheaderfont{\scshape}
+\renewcommand{\baselinestretch}{1.5}
+\newcommand{\be}{\begin{equation}}
+\newcommand{\dis}{\displaystyle}
+\newcommand{\ee}{\end{equation}}
+\newcommand{\tab}{\hspace*{5 ex}}
+\newcommand{\halmos}{\hfill $\;\;\;\Box$}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\sub}{\begin{subeqnarray}}
+\newcommand{\e}{\end{subeqnarray}}
+\renewcommand{\sin}{\mathrm{sen}}
+\hbadness=10000 \vbadness=10000 \hfuzz=99in \vfuzz=99in
+
+% Lista de arquivos a serem processados
+%\includeonly{Plano_Ensino}
+%\includeonly{rosto}
+%\includeonly{Paginas/resumos2}
+%\includeonly{Paginas/agradecimentos}
+%\includeonly{Paginas/dedicatoria}
+%\includeonly{Paginas/simbolos}
+\includeonly{%
+%Cap01/Capitulo1,%
+%Cap02/Capitulo2,%
+%Cap03/Capitulo3,%
+%Cap04/Capitulo4a,%
+%Cap05/Capitulo5,%
+%Cap06/Capitulo6,%
+}%
+
+
+%% Para a criação do Glossário
+%\makeglossary
+
+%% Comandos para facilitar a edição
+\newcommand{\cpp}{\texttt{C$++$}}
+\newcommand{\latex}{\LaTeX}
+
+\begin{document}
+
+%% Abrevia figuras e tabelas
+%\def\figurename{Figura}
+%\def\tablename{Tabela}
+%\def\tablename{Quadro}
+
+\pagenumbering{roman}% \thispagestyle{empty} \ \vspace{0.5cm}
+
+%\input{Paginas/capa}
+%\input{Paginas/rosto}
+%\input{Paginas/ficha-catal}
+%\input{Paginas/aprovacao}
+%\input{Paginas/dedicatoria}
+%\input{Paginas/agradecimentos}
+%\input{Paginas/epigrafe}
+%\input{Paginas/resumos2}
+%\input{Paginas/resumos1}
+
+%\def\contentsname{Sumário}
+%\tableofcontents
+%
+\newpage
+\pagenumbering{arabic}%\thispagestyle{empty}
+%\input{CAP1/Capitulo1}
+%\input{CAP2/Capitulo2}
+%\input{CAP3/Capitulo3}
+%\input{CAP4/Capitulo4}
+
+
+\newpage
+
+%\pagenumbering{arabic}
+%\chapter*{Introdução}   \hspace{1cm}
+%\addcontentsline{toc}{chapter}{Introdução}
+%
+
+%\chapter{INTRODUÇÃO}
+%\hspace{1.0cm} TEXTO $$\left[\displaystyle\frac{x^2}{x^3}\right]$$\\
+%$x\in{\R}$ ou $x\in\mathbb{R}$ $\sum_{i=1}^{n}$
+
+\chapter{O Percurso para Construção do Conceito de Limite} \hspace{1.0cm}
+
+O conceito originário de limite surgiu na Grécia antiga no século V a.C., influenciado pelos paradoxos de Zenão. Os argumentos de Zenão que causaram maior perturbação foram os quatro paradoxos sobre a impossibilidade do movimento, sendo eles: o da Dicotomia, o da Flecha, do Estádio e o de Aquiles.
+
+\medskip
+Segundo o paradoxo mais famoso o de Aquiles e a Tartaruga: Aquiles e a tartaruga resolvem apostar uma corrida, como Aquiles é muito mais veloz, decidiu dar uma vantagem a tartaruga que começou num ponto A mais a frente do ponto de largada; o veloz Aquiles corre para alcançar a tartaruga, mas quando chega ao ponto A de onde partiu a tartaruga, esta se encontra mais adiante, numa outra posição B. Quando Aquiles chega à posição B, a tartaruga também avança para uma nova posição C, e assim sucessivamente, de tal forma que Aquiles sempre se aproximará da tartaruga, porém sem nunca alcançá-la.
+
+\medskip
+ Figura
+
+\medskip
+ O paradoxo surge ao supor intuitivamente que a soma de infinitos intervalos de tempo é infinita, de tal forma que seria necessário um tempo infinito para Aquiles alcançar a tartaruga.  No entanto, os infinitos intervalos de tempo descritos no paradoxo formam uma progressão geométrica e sua soma converge para um valor finito, em que Aquiles encontrará a tartaruga. Logo, o argumento de Zenão foi um passo significativo para a idéia da definição de limite. (modificar este parágrafo)
+ 
+\medskip
+ As afirmações de Zenão
+envolvem conceitos de continuidade do infinito e do infinitesimal, e
+são ainda hoje, motivo de debate tanto quanto o foram no tempo de
+Aristóteles, que não obteve sucesso ao tentar explicar os paradoxos
+de Zenão, onde nenhuma explicação fora satisfatória até a criação do
+contínuo e das teoria dos agregados por George Cantor (1845 - 1916
+). (CAJORI, 2007)
+
+\medskip
+O trabalho de Eudoxo de Cnido (408 - 355 a. C.), com sua definição
+de igualdade de duas razões, constrói uma nova definição de
+proporção, de caráter mais geral, utilizando apenas os números
+inteiros positivos. Embora tenha sido uma solução genial para a
+crise dos incomensuráveis, ele atrasou por mais de mil anos o
+desenvolvimento da Aritmética e da Álgebra, pois subordinou essas
+disciplinas aos estudos da geometria.
+
+\medskip
+(***recuar o texto, letra tam 10)
+Segundo Arquimedes, Eudoxo forneceu o axioma que hoje tem o nome de Arquimedes, às
+vezes, chamado axioma de Arquimedes e que serviu de base para o
+método de exaustão, o equivalente grego de cálculo integral. O
+axioma diz que dadas duas grandezas que têm uma razão (isto é,
+nenhuma delas sendo zero), pode-se achar um múltiplo de qualquer
+delas que seja maior que a outra. Esse enunciado eliminava um
+nebuloso argumento sobre segmentos de reta indivisíveis, ou
+infinitésimos fixos, que às vezes aparecia.(BOYER, 1999, p. 62)
+
+\medskip
+ Do axioma de Eudoxo
+(ou Arquimedes) é fácil, por uma redução ao absurdo, provar uma
+proposição que formava a base de método de exaustão dos gregos. "Se
+de uma grandeza qualquer subtrairmos uma parte não menor que sua
+metade e do resto novamente subtrai-se não menor que a metade e se
+esse processo de subtração é continuado, finalmente restará uma
+grandeza menor que qualquer grandeza de mesma espécie". (BOYER,
+1999, p.63)
+
+\medskip
+ De acordo com Carl Boyer (1999, p.226), Galileu (1564-1642)
+tinha tido a intenção de escrever um tratado sobre o infinito em
+matemática, mas ele não foi encontrado. Enquanto isso seu discípulo
+Cavalieri (1598-1647) fora motivado por Kleper (1571-1630), bem como
+por idéias antigas e medievais e pelo encorajamento de Galileu, a
+organizar seus pensamentos sobre infinitésimos em formas de livro.
+Mas a obra que mais o projetou, é o tratado Geometria
+indivisibilibus, publicado em sua versão inicial no ano de 1635,
+onde apresenta seu método dos indivisíveis.
+
+\medskip
+ Merece destaque, a obra de Fermat (1601 - 1665), que de acordo com
+Boyer (1999) é possível que desde 1629 Fermat já estivesse de posse
+da sua Geometria Analítica, pois por essa época ele fez duas
+descobertas significativas que se relacionam de perto com seu
+trabalho sobre lugares geométricos. A mais importante foi o chamado
+"Método para achar máximos e mínimos" que de acordo com Laplace
+(1749 - 1827), lhe rendeu o título de descobridor do Cálculo
+Diferencial, bem como co-descobridor da Geometria Analítica.  Afirma
+Boyer (1999), que evidentemente Fermat ainda não possuía a definição
+formal do conceito de limite, mas por outro lado o seu método para
+achar máximos e mínimos se assemelhava muito ao usado hoje no
+Cálculo.
+
+\medskip
+ No século XVII, surgem
+os trabalhos de Isaac Newton (1642 - 1727) e Gottfried Wilhelm
+Leibniz (1646 - 1716) que embora tenham tido muitos precursores, a
+criação do cálculo em geral é atribuídas a eles. No período de
+1665-1666, fora segundo Boyer (1999), o período mais produtivo de
+descoberta matemática, pois durante esse período, Newton realizou
+quatro de suas principais descobertas: 1. O teorema binomial, 2. O
+cálculo, 3. A lei da gravitação e 4. A natureza das cores.
+
+\medskip
+ Em 1687,
+em Principia Mathematica, o mais admirado tratado científico de
+todos os tempos, Newton tentou dar uma formulação precisa do
+conceito de limite: "Quantidades, e as razões de quantidades, que em
+qualquer tempo finito convergem continuamente à igualdade, e antes
+do fim desse tempo se aproximam mais uma da outra que por qualquer
+diferença dada, se tornam finalmente iguais."(BOYER, 1999, p. 274). Isto, é claro, é uma
+tentativa de definir o limite de uma função.
+
+\medskip
+ Segundo Boyer (1999),
+Gottfried Wilhelm Leibniz (1646-1716) inventou seu cálculo entre
+1673 e 1676. Usou pela primeira vez o símbolo integral, um S
+alongado, derivando da primeira letra da palavra latina summa (soma)
+em 29 de outubro de 1675. O objetivo era indicar a soma de
+indivisíveis. Algumas semanas depois já escrevia diferenciais e
+derivadas como o fazemos hoje, assim como escrevia ?x dy e ?y dx
+para integrais.
+
+\medskip
+ Houve uma infeliz polêmica Newton-Lebniz, onde
+Leibniz foi acusado de plagiar as descobertas de Newton, mas hoje
+não há dúvidas de que ambos criaram o cálculo independentemente.
+Embora a descoberta de Newton seja anterior, Lebnitz foi o primeiro
+a publicar seus resultados.
+
+\medskip
+Entretanto, em ambos os cálculos faltavam os fundamentos; tanto
+Newton como Leibniz tinham problemas com os infinitesimais, vistos
+por ambos de maneira diferentes, mas que operavam de maneiras
+parecidas, pois esses infinitesimais às vezes eram cancelados como
+fatores diferentes de zero ou desprezados como equivalentes a zero.
+"Essas operações contraditórias dominaram o cálculo por muito tempo,
+até que surgissem trabalhos decisivos para a fundamentação lógica da
+disciplina no começo do século XIX". (ÁVILA, 2006).
+
+\medskip
+ Muito se deve as
+contribuições aos membros da família Bernoulli, que no final do
+século XVII os irmãos Jacob Bernoulli (1654-1705) e Johann Bernoulli
+(1667 - 1748), estavam entre os primeiros matemáticos que perceberam
+a potência espantosa do cálculo e aplicaram esse instrumento em uma
+gama ampla de problemas.
+
+\medskip
+ Johan Bernoulli foi um dos professores mais
+inspirado de seu tempo e em troca de um salário regular, forneceu ao
+francês de Marquês de l´Hopital (1661-1704) informações sobre suas
+descobertas matemáticas, concedendo a este o direito de usá-las como
+lhe conviesse, compondo então seu primeiro texto de cálculo a ser
+publicado. Foi assim que o conhecido método de determinação de forma
+indeterminada 0/0 tornou-se incorretamente conhecido, em textos
+posteriormente de cálculo, como regra de l´Hospital. (EVES, 2005).
+
+\medskip
+D'Alembert (1717-1790), reconheceu explicitamente a importância
+central do limite, e em 1754, segundo Eves (2005), fez a mais
+importante recomendação de que, para colocar em bases firmes os
+fundamentos da análise, era preciso desenvolver uma teoria dos
+limites bem estruturada, mas seus contemporâneos quase não lhe deram
+ouvidos.
+
+\medskip
+Cauchy (1789 - 1875) e Weierstrass (1815 - 1897), dois matemáticos
+que merecem destaque, foram fundamentais na busca de uma construção
+rigorosa dos fundamentos do Cálculo. Uma das principais
+contribuições de Cauchy para o cálculo foi à definição de limite
+relativamente clara: "Quando valores sucessivos atribuídos a uma
+variável se aproximam indefinidamente de um valor fixo de modo a
+acabar diferindo dele tão pouco quanto se queira, este último
+chama-se o limite dos outros todos" (BOYER, 1999, p. 355).
+
+\medskip
+ Enquanto muitos
+matemáticos pensavam no infinitésimo como um número fixo muito
+pequeno, Cauchy definiu-o claramente como uma variável independente:
+"Diz-se que uma quantidade variável se torna infinitamente pequena
+quando seu valor numérico diminui indefinidamente de modo a
+convergir ao limite zero". (Boyer, 1999, p.355).
+
+\medskip
+ No entanto, se buscavam
+mais rigor na fundamentação dos números reais, uma vez que a teoria
+de limites de Cauchy fora construída sobre uma noção intuitiva
+simples do sistema dos números reais. Foi então que, segundo Eves
+(2005), Weierstrass defendeu um programa no qual o próprio sistema
+de números reais fosse tornado mais rigoroso para que assim tudo que
+dele decorresse na análise inspirasse segurança, esse notável
+programa ficou conhecido como aritmetização da análise, que se
+concretizou no final do século XIX com os trabalhos de Richard
+Dedeking (1831-1916), George Cantor (1845-1932), os quais permitiram
+a demonstração rigorosa dos teoremas fundamentais sobre limites sem
+utilizar recursos geométricos, criando dessa forma, uma nova forma
+de lógica matemática.
+
+\medskip
+Foi assim que, no século XIX, quando segundo Ávila (2006), a
+definição de limite de Cauchy, correta, porém eivada da noção
+espúria de movimento - é agora substituída pela definição puramente
+numérica de Weirstrass: \emph{f(x) tem limite L com x tendendo a
+$x_{0}$ significa que dado qualquer $\varepsilon>0$, existe
+$\delta>0$ tal que se
+$0<|x-x_0|<\delta\Rightarrow|f(x)-L|<\varepsilon$.}
+
+
+%\chapter*{Conclusão}
+
+%TEXTO
+
+\begin{thebibliography}{99}
+\bibitem{boy}
+BOYER, C. B. {\bf História da Matemática}. $2ª$ Edição. São Paulo:
+Edgard Blücher Ltda, 1999.
+
+\bibitem{caj}
+CAJORI , F. {\bf Uma História da Matemática}. Rio de Janeiro:
+Ciência Moderna Ltda, 2007.
+
+\bibitem{eve}
+EVES, H. {\bf Introdução à História da Matemática}. Campinas:
+Unicamp, 2005.
+
+\bibitem{avi}
+ÁVILA, G. {\bf Análise Matemática para Licenciatura}. $2ª$ Edição.
+São Paulo: Edgard Blücher Ltda, 2006.
+
+
+
+\end{thebibliography}
+
+ \end{document}
